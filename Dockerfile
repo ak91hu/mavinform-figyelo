@@ -1,0 +1,11 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY news_to_discord.py .
+
+RUN pip install --no-cache-dir requests beautifulsoup4
+
+VOLUME ["/data"]
+
+CMD ["python", "news_to_discord.py"]
